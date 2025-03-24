@@ -1,0 +1,88 @@
+<!-- In JavaScript, this refers to the context in which a function is executed:
+
+Global Scope: In the browser, this refers to the window object.
+Object Method: When used inside an object method, this refers to that object.
+Constructor Function/Class: In a constructor or class, this refers to the newly created object.
+Arrow Function: this is inherited from the surrounding lexical scope.
+Event Listeners: In event handlers, this refers to the element that triggered the event. -->
+
+<!-- this Behavior:
+
+Arrow function → Inherits this from its surrounding scope.
+Normal function → Has its own this (depends on how it's called).
+
+Usage:
+Arrow functions → Best for short functions and callbacks.
+Normal functions → Good for object methods and constructors.
+
+Other Differences:
+Arrow functions don’t have their own arguments.
+They can’t be used as constructors with new.
+They allow implicit return for one-liners. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const user = {
+    username: "hitesh",
+    price: 999,
+
+    welcomeMessage: function() {
+        console.log(`${this.username} , welcome to website`);
+        console.log(this);
+    }
+
+}
+
+// user.welcomeMessage()
+// user.username = "sam"
+// user.welcomeMessage()
+
+// console.log(this);
+
+// function chai(){
+//     let username = "hitesh"
+//     console.log(this.username);
+// }
+
+// chai()
+
+// const chai = function () {
+//     let username = "hitesh"
+//     console.log(this.username);
+// }
+
+const chai =  () => {
+    let username = "hitesh"
+    console.log(this);
+}
+
+
+// chai()
+
+// const addTwo = (num1, num2) => {
+//     return num1 + num2
+// }
+
+// const addTwo = (num1, num2) =>  num1 + num2
+
+// const addTwo = (num1, num2) => ( num1 + num2 )
+
+const addTwo = (num1, num2) => ({username: "hitesh"})
+
+
+console.log(addTwo(3, 4))
+
+
+// const myArray = [2, 5, 3, 7, 8]
+
+// myArray.forEach()
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!-- In JavaScript, Execution Context is the environment where code runs. It has two main types:
+
+Global Execution Context (GEC) – Created when the script starts, and this refers to the global object (window in browsers).
+Function Execution Context (FEC) – Created whenever a function is called.
+Each execution context has:
+
+Memory Creation Phase (Variables and functions are stored in memory).
+Execution Phase (Code runs line by line).
+JavaScript uses the Call Stack to manage execution contexts. -->
+
+//CALL STACK 
+<!-- The Call Stack in JavaScript is a data structure that manages function execution.
+
+How it works:
+When a function is called, it is pushed onto the stack.
+When the function finishes, it is popped off the stack.
+JavaScript runs functions one at a time (synchronous execution). -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //call stack
+    function first() {
+    console.log("First");
+}
+    function second() {
+     first();  // Calls 'first' function
+    console.log("Second");
+}
+second();
+// Call Stack flow:
+
+// second() is pushed.
+// first() is pushed → runs → popped.
+// console.log("Second") runs → second() is popped.
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Click Color Change</title>
+    <style>
+        /* Styling for better appearance */
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: orange;
+            border: none;
+            cursor: pointer;
+            color: white;
+        }
+
+        button:hover {
+            background-color: darkorange;
+        }
+
+        #text {
+            font-size: 20px;
+            font-weight: bold;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Button to trigger the color change -->
+    <button onclick="changeColor()">Click Me</button>
+
+    <!-- Paragraph whose color will change -->
+    <p id="text">Hello</p>
+
+    <script>
+        // Function to change text color
+        function changeColor() {
+            document.getElementById("text").style.color = "blue";
+        }
+    </script>
+
+</body>
+</html>
